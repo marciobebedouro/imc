@@ -9,13 +9,77 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TextInput, Alert} from 'react-native';
 
+// const calculo_imc = () => {
+
+//   const peso = parseInt(document.getElementById('peso').value);
+//   const altura = parseInt(document.getElementById)('altura').value);
+//   const resultado;
+//   resultado = peso /(Math.pow(altura,2));
+// }
+
+
+
+const App = () => {
+  const [peso, setpeso] = useState('');
+  const [altura, setaltura] = useState({});
+  const [erro, setError] = useState('');
+
+
+ 
+
+
+  const onchangeTextHandler = texto => {
+    const regex = /^[0-9\b]+$/;
+    if (regex.test(texto)) {
+      setpeso(texto);
+    }
+  };
+
+
+
+
+  const exibirPeso = () => {
+    if (peso && peso) {
+      return (
+        <View>
+          <Text>{peso}</Text>
+        </View>
+      );
+    } else if (erro) {
+      return (
+        <View>
+          <Text>{erro}</Text>
+        </View>
+      );
+    }
+  };
 
 
 
 
 
+  return (
+    <View>
+      <Text>Digite seu peso</Text>
+      <TextInput
+        value={}
+        keyboardType="numeric"
+        //maxLength={8}
+        onChangeText={texto => onchangeTextHandler(texto)}
+      />
+      {}
+    </View>
+  );
+};
 
 
+
+}
+
+export default App;
+
+
+//Math.pow()
 
 // import React, {useState, useEffect} from 'react';
 // import {View, Text, TextInput, Alert} from 'react-native';
@@ -81,3 +145,13 @@ import {View, Text, TextInput, Alert} from 'react-native';
 // };
 
 // export default App;
+
+
+
+
+
+
+
+
+
+
